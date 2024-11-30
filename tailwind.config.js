@@ -25,7 +25,6 @@ export default {
         'blue-background': '#F0F9FF',
         'green': '#027A48',
         'green-background': '#ECFDF3',
-        'gray': '#027A48',
         'gray-background': '#F8F9FC',
         'orange': '#C01048',
         'orange-background': '#FFF1F3',
