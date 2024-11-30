@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='flex flex-col-reverse tablet:flex-row text-center p-5 gap-4'>
+    <footer className='flex flex-col-reverse tablet:flex-row text-center p-5 lg:px-32 gap-4'>
         <span>
             &copy; 2024
         </span>
