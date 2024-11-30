@@ -1,16 +1,14 @@
 import React from "react";
 import HomeRecentPost from "../containers/HomeRecentPost";
 import HomeAllBlogPosts from "../containers/HomeAllBlogPosts";
+import BigHeader from "../components/BigHeader";
 
 
 const Home = () => {
   return (
     <main>
-      <header className="border-b border-y border-text p-4">
-        <h1 className="font-bold uppercase text-center text-[72px] tablet:text-[160.8px] desktop:text-[243.8px]">
-          The Blog
-        </h1>
-      </header>
+      {/* BIG HEADER */}
+      <BigHeader>The Blog</BigHeader>
       {/* RECENT POST */}
       <HomeRecentPost />
       {/* ALL BLOG POST */}

@@ -4,6 +4,8 @@ import Navbar from "./layouts/Navbar";
 import Footer from "./layouts/Footer";
 import Home from "./pages/Home";
 import BlogDetail from "./pages/BlogDetail";
+import Newsletter from "./pages/Newsletter";
+import About from "./pages/About";
 
 const App = () => {
   return (
@@ -14,6 +16,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog/*" element={<BlogDetail />} />
+            <Route path="/newsletter" element={<Newsletter />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<h1>404</h1>} />
           </Routes>
         </div>
         <Footer />
