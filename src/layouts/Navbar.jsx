@@ -8,7 +8,7 @@ import close from "../assets/icons/close.svg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className={`flex flex-col tablet:flex-row justify-between items-center fixed bg-light z-50 top-0 left-0 w-full ${isOpen ? 'h-screen': 'h-[72px]'}  p-[20px] tablet:h-[80px] desktop:h-[60px] transition-all duration-500 overflow-hidden lg:px-32`}>
+    <nav role="navigation" className={`flex flex-col tablet:flex-row justify-between items-center fixed bg-light z-50 top-0 left-0 w-full ${isOpen ? 'h-screen': 'h-[72px]'}  p-[20px] tablet:h-[80px] desktop:h-[60px] transition-all duration-500 overflow-hidden lg:px-32`}>
       {/* NAV HEADER */}
       <div className={`flex ${isOpen && 'invisible'} items-center justify-between w-full`}>
         <span className="font-bold text-[18px]">LumosBlog</span>

@@ -7,7 +7,6 @@ import { useLocation } from "react-router-dom";
 import { useGetPostDetailQuery } from "../redux/slices/blogSlice";
 import DOMPurify from "dompurify";
 import parse from "html-react-parser";
-import { useSelector } from "react-redux";
 
 const BlogDetail = () => {
   const { pathname } = useLocation();
