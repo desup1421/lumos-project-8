@@ -3,13 +3,19 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import arrowUpRightBlack from "../assets/icons/arrow-up-right-black.svg";
 
-const Card = ({post, className}) => {
+const Card = ({ post, className }) => {
+  // Navigate to the blog detail page
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/blog/${post.key}`);
-  }
+  };
+  
   return (
-    <div onClick={handleClick} data-cy='post-card' className={`grid ${className} tablet: gap-5 hover:scale-[0.9] transition-transform cursor-pointer overflow-hidden`}>
+    <div
+      onClick={handleClick}
+      data-cy="post-card"
+      className={`grid ${className} tablet: gap-5 hover:scale-[0.9] transition-transform cursor-pointer overflow-hidden`}
+    >
       <div className="w-full">
         <img
           className="object-cover w-full h-full"
@@ -23,13 +29,11 @@ const Card = ({post, className}) => {
           <span>{post?.title}</span>
           <img src={arrowUpRightBlack} alt="arrow up rigt icon" />
         </h3>
-        <p className="text-text line-clamp-3">
-        {post?.desc}
-        </p>
+        <p className="text-text line-clamp-3">{post?.desc}</p>
         <div className="flex gap-2">
-          <p className="text-sm px-2 bg-violet-background text-violet font-semibold  rounded-full">{post?.tag}</p>
-          {/* <p className="text-sm px-2 bg-orange-background text-orange font-semibold  rounded-full">Author</p>
-          <p className="text-sm px-2 bg-green-background text-green font-semibold  rounded-full">Author</p> */}
+          <p className="text-sm px-2 bg-violet-background text-violet font-semibold  rounded-full">
+            {post?.tag}
+          </p>
         </div>
       </div>
     </div>
@@ -38,6 +42,6 @@ const Card = ({post, className}) => {
 
 Card.propTypes = {
   className: PropTypes.string,
-  post: PropTypes.object
-}
+  post: PropTypes.object,
+};
 export default Card;

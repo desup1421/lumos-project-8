@@ -4,26 +4,27 @@ import CardSkeleton from "../components/CardSkeleton";
 import { useGetRecentPostQuery } from "../redux/slices/blogSlice";
 
 const HomeRecentPost = () => {
-  const { data, error, isLoading } = useGetRecentPostQuery();
-  const posts = data;
+  // Fetch data
+  const { data: posts, error, isLoading } = useGetRecentPostQuery();
+
   if (isLoading) {
     return (
-    <section className="mt-5 p-5 lg:p-0">
-      <div className="grid gap-5 lg:gap-10 grid-cols-1 ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 ">
-          <div className="row-span-2">
-            <CardSkeleton />
+      <section className="mt-5 p-5 lg:p-0">
+        <div className="grid gap-5 lg:gap-10 grid-cols-1 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 ">
+            <div className="row-span-2">
+              <CardSkeleton />
+            </div>
+            <div>
+              <CardSkeleton />
+            </div>
           </div>
           <div>
             <CardSkeleton />
           </div>
         </div>
-        <div>
-          <CardSkeleton />
-        </div>
-      </div>
-    </section>
-    )
+      </section>
+    );
   }
 
   if (error) {
@@ -45,7 +46,7 @@ const HomeRecentPost = () => {
             <Card post={posts[2]} className="grid-cols-1 tablet:grid-cols-2" />
           </div>
         </div>
-        <div className="">
+        <div>
           <Card post={posts[3]} className="grid-cols-1 lg:grid-cols-2" />
         </div>
       </div>

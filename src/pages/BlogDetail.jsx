@@ -9,20 +9,25 @@ import DOMPurify from "dompurify";
 import parse from "html-react-parser";
 
 const BlogDetail = () => {
+  // Get the pathname from the URL
   const { pathname } = useLocation();
   const key = pathname.replace("/blog/", "");
+
+  // Fetch data using the key
   const { data, isLoading, isError } = useGetPostDetailQuery(key);
   const post = data?.results;
 
+  // State to store the schema data
   const [schema, setSchema] = useState({});
-  const [ image, setImage ] = useState(null);
-  const [desc, setDesc] = useState(null)
+  const [image, setImage] = useState(null);
+  const [desc, setDesc] = useState(null);
 
+  // Fetch the image and description when data changes
   useEffect(() => {
     if (data) {
       const sanitizeData = DOMPurify.sanitize(data.results.content);
       const parser = new DOMParser();
-      const content = parser.parseFromString(sanitizeData, 'text/html')
+      const content = parser.parseFromString(sanitizeData, "text/html");
 
       const firstImage = content.querySelector("img");
       if (firstImage) {
@@ -36,8 +41,9 @@ const BlogDetail = () => {
       }
     }
   }, [data]);
-  
-  useEffect(()=>{
+
+  // Generate schema.org data
+  useEffect(() => {
     const schema = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -52,21 +58,17 @@ const BlogDetail = () => {
         name: post?.author,
       },
     };
-    setSchema(schema)
-  }, [key, post, image, desc])
+    setSchema(schema);
+  }, [key, post, image, desc]);
 
+  // Render component when error
   if (isError) {
     return <div>Error fetching data</div>;
   }
 
   return (
     <>
-      <MyHelmet
-        title={post?.title}
-        desc={desc}
-        img={image}
-        schema={schema}
-      />
+      <MyHelmet title={post?.title} desc={desc} img={image} schema={schema} />
       <div className="grid grid-cols-3 gap-5 p-5 tablet:p-0">
         <DetailRecentBlogPosts />
         {isLoading ? (

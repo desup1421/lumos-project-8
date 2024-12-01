@@ -5,17 +5,22 @@ import DOMPurify from "dompurify";
 
 const SubscribeForm = () => {
   const dispatch = useDispatch();
+
+  // Get the subscribe state from the Redux store
   const { isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.subscribe
   );
 
+  // State variables for email input and form submission
   const [email, setEmail] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Sanitize the email input on submission, not on change
     const purified = DOMPurify.sanitize(email);
     dispatch(subscribe({ email: purified }));
   };
 
+  // Set form submission to empty on success
   useEffect(() => {
     if (isSuccess) {
       setEmail("");

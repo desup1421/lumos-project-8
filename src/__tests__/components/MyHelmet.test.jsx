@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 test("renders MyHelmet component with correct props", async () => {
+  // Mock the HelmetProvider and Router components
   const title = "My Page Title";
   const description = "This is a test page.";
   const image = "https://example.com/image.jpg";
@@ -16,6 +17,7 @@ test("renders MyHelmet component with correct props", async () => {
     description: description,
     image: image,
   };
+
   render(
     <HelmetProvider>
       <Router>
@@ -28,6 +30,8 @@ test("renders MyHelmet component with correct props", async () => {
       </Router>
     </HelmetProvider>
   );
+
+  // Wait for the HelmetProvider to update the document.head
   await waitFor(() => {
     const helmet = document.head;
     expect(helmet.querySelector("title").textContent).toBe(title);

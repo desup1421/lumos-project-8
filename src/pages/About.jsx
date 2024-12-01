@@ -6,6 +6,7 @@ import MyHelmet from "../components/MyHelmet";
 const About = () => {
   return (
     <>
+      {/* HELMET */}
       <MyHelmet
         title="John Doe"
         desc="As a passionate and experienced UI designer, I am dedicated to
@@ -13,10 +14,21 @@ const About = () => {
               needs of my clients and their users."
         img={profile}
       />
+
+      {/* BIG HEADER */}
       <BigHeader>John Doe</BigHeader>
+
+      {/* HERO IMAGE */}
       <div className="mt-5 p-5 lg:p-0">
-        <img className="w-full object-cover" src={profile} alt="" />
+        <img
+          className="w-full object-cover"
+          src={profile}
+          alt="john doe profile"
+        />
+
+        {/* MAIN SECTION */}
         <main className="mb-20">
+          {/* ABOUT ME SECTION */}
           <section>
             <h2 className="text-xl font-bold my-5">About Me</h2>
             <p>
@@ -30,6 +42,8 @@ const About = () => {
               looking for new challenges and opportunities to grow as a design.
             </p>
           </section>
+
+          {/* SKILLS SECTION */}
           <section>
             <h2 className="text-xl font-bold my-5">Skills:</h2>
             <ul className="list-disc list-outside px-5">
@@ -60,6 +74,8 @@ const About = () => {
               <li>Proficiency in HTML, CSS, and JavaScript</li>
             </ul>
           </section>
+
+          {/* EXPERIENCE SECTION */}
           <section>
             <h2 className="text-xl font-bold my-5">Experience:</h2>
             <ul className="list-disc list-outside px-5">
@@ -82,6 +98,8 @@ const About = () => {
               </li>
             </ul>
           </section>
+
+          {/* EDUCATION SECTION */}
           <section>
             <h2 className="text-xl font-bold my-5">Education:</h2>
             <ul className="list-disc list-outside px-5">

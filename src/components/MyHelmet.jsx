@@ -4,8 +4,10 @@ import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 
 const MyHelmet = ({ title, desc, img, schema }) => {
+  // Get the current URL
   const location = useLocation();
   const link = `${window.location.origin}${location.pathname}${location.search}${location.hash}`;
+  
   return (
     <Helmet>
       <title>{title}</title>

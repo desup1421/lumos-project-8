@@ -13,14 +13,21 @@ describe("SubscribeForm", () => {
         <SubscribeForm />
       </Provider>
     );
+    // Title should be visible
     const title = screen.getByText("Stories and interviews");
     expect(title).toBeInTheDocument();
+
+    // Description should be visible
     const description = screen.getByText(
       "Subscribe to learn about new product features, the latest in technology, solutions, and updates."
     );
     expect(description).toBeInTheDocument();
+
+    // Input and button should be visible
     const input = screen.getByPlaceholderText("Enter your email");
     expect(input).toBeInTheDocument();
+
+    // Button should be visible
     const button = screen.getByRole("button", { name: "Subscribe" });
     expect(button).toBeInTheDocument();
   });
@@ -32,8 +39,8 @@ describe("SubscribeForm", () => {
       </Provider>
     );
 
+    // Type on form
     const input = screen.getByPlaceholderText("Enter your email");
-    // Simulasi mengetik email
     userEvent.type(input, "test@example.com");
     await waitFor(() => expect(input).toHaveValue("test@example.com"));
   });

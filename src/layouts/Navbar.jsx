@@ -9,10 +9,16 @@ import { toggleTheme } from "../redux/slices/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
+  // State to manage the nav menu
   const [isOpen, setIsOpen] = useState(false);
-  const dispatch = useDispatch();
+
+  // Get the theme state from the Redux store
   const {isDark} = useSelector(state => state.theme);
 
+  // Get the dispatch function from Redux
+  const dispatch = useDispatch();
+
+  // Set theme when the component mounts and updates
   useEffect(() => {
     const root = window.document.documentElement;
     if (isDark) {

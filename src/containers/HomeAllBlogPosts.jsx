@@ -9,15 +9,22 @@ import arrowRightBlack from "../assets/icons/arrow-right-black.svg";
 import arrowLeftBlack from "../assets/icons/arrow-left-black.svg";
 
 const HomeAllBlogPosts = () => {
+  // Pagination
   const [page, setPage] = useState(1);
+
+  // Necxt page function
   const nextPage = () => {
     setPage((prevPage) => prevPage + 1);
   };
+
+  // Prev page function
   const prevPage = () => {
     setPage((prevPage) => prevPage - 1);
   };
-  const { data, isError, isLoading } = useGetPostQuery(page);
-  const posts = data;
+
+  // Fetch data
+  const { data : posts, isError, isLoading } = useGetPostQuery(page);
+
   if (isLoading) {
     return (
       <section className="my-10 p-5 lg:p-0">
