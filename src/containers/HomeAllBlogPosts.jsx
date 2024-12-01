@@ -18,7 +18,6 @@ const HomeAllBlogPosts = () => {
   };
   const { data, isError, isLoading } = useGetPostQuery(page);
   const posts = data;
-  console.log(isLoading);
   if (isLoading) {
     return (
       <section className="my-10 p-5 lg:p-0">

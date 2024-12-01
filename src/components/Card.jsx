@@ -2,14 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import arrowUpRightBlack from "../assets/icons/arrow-up-right-black.svg";
-import { setData } from "../redux/slices/dataSlice";
-import { useDispatch } from "react-redux";
 
 const Card = ({post, className}) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(setData(post));
     navigate(`/blog/${post.key}`);
   }
   return (
