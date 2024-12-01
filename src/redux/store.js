@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { blogApiSlice } from './slices/blogSlice';
 import subscribeSlice from './slices/subscribeSlice';
-import dataSlice from './slices/dataSlice';
+import themeSlice from './slices/themeSlice';
 
 const store = configureStore({
     reducer: {
-        data: dataSlice,
+        theme: themeSlice,
         subscribe: subscribeSlice,
         [blogApiSlice.reducerPath]: blogApiSlice.reducer
     },

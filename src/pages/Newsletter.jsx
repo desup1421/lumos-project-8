@@ -4,7 +4,7 @@ import HomeAllBlogPosts from "../containers/HomeAllBlogPosts";
 
 const Newsletter = () => {
   return (
-    <div className="mt-32">
+    <div className="pt-10">
       <main>
         <SubscribeForm />
         <HomeAllBlogPosts />

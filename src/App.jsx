@@ -9,10 +9,10 @@ import About from "./pages/About";
 
 const App = () => {
   return (
-    <div className="bg-light min-h-screen font-inter">
+    <div className="bg-light text-dark dark:text-light dark:bg-dark min-h-screen font-inter">
       <Router>
         <Navbar />
-        <div className="mt-[72px] tablet:mt-[80px] lg:px-32">
+        <div className="pt-[72px] tablet:pt-[80px] lg:px-32">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog/*" element={<BlogDetail />} />
