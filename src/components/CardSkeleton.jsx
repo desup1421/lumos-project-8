@@ -2,7 +2,7 @@ import React from 'react'
 
 const CardSkeleton = () => {
   return (
-    <div className='animate-pulse border flex flex-col gap-3'>
+    <div data-testid="card-skeleton" className='animate-pulse border flex flex-col gap-3'>
       <div className='w-full h-[200px] bg-gray-300 rounded-md'></div>
       <div className='flex flex-col gap-5'>
         <div className='w-1/4 h-4 bg-gray-300 rounded-md'></div>

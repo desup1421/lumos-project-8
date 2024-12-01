@@ -9,12 +9,12 @@ const Card = ({post, className}) => {
     navigate(`/blog/${post.key}`);
   }
   return (
-    <div onClick={handleClick} className={`grid ${className} tablet: gap-5 hover:scale-[0.9] transition-transform cursor-pointer overflow-hidden`}>
+    <div onClick={handleClick} data-cy='post-card' className={`grid ${className} tablet: gap-5 hover:scale-[0.9] transition-transform cursor-pointer overflow-hidden`}>
       <div className="w-full">
         <img
           className="object-cover w-full h-full"
           src={post?.thumb}
-          alt=""
+          alt={post?.title}
         />
       </div>
       <div className="flex flex-col gap-5">
