@@ -1,12 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import arrowUpRightBlack from "../assets/icons/arrow-up-right-black.svg"
+import arrowUpRightBlack from "../assets/icons/arrow-up-right-black.svg";
+import { setData } from "../redux/slices/dataSlice";
+import { useDispatch } from "react-redux";
 
 const Card = ({post, className}) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(setData(post));
+    navigate(`/blog/${post.key}`);
+  }
   return (
-    <div onClick={() => navigate(`/blog/${post.key}`)} className={`grid ${className} tablet: gap-5 hover:scale-[0.9] transition-transform cursor-pointer overflow-hidden`}>
+    <div onClick={handleClick} className={`grid ${className} tablet: gap-5 hover:scale-[0.9] transition-transform cursor-pointer overflow-hidden`}>
       <div className="w-full">
         <img
           className="object-cover w-full h-full"

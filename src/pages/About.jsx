@@ -1,28 +1,22 @@
 import React from "react";
 import BigHeader from "../components/BigHeader";
 import profile from "../assets/img/profile.png";
-// import Card from "../components/Card";
-// import CardSkeleton from "../components/CardSkeleton";
+import MyHelmet from "../components/MyHelmet";
 
 const About = () => {
-  // const cardContent = {
-  //   title: "UI Designer",
-  //   thumb: "https://picsum.photos/id/1005/200/300",
-  //   location: "New York, NY",
-  //   date: "Jan 2020",
-  //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl nisl sit amet nisl.",
-  // };
-
   return (
     <>
+      <MyHelmet
+        title="John Doe"
+        desc="As a passionate and experienced UI designer, I am dedicated to
+              creating intuitive and engaging user experiences that meet the
+              needs of my clients and their users."
+        img={profile}
+      />
       <BigHeader>John Doe</BigHeader>
       <div className="mt-5 p-5 lg:p-0">
         <img className="w-full object-cover" src={profile} alt="" />
         <main className="mb-20">
-          {/* <section>
-            <Card post={cardContent} />
-            <CardSkeleton />
-          </section> */}
           <section>
             <h2 className="text-xl font-bold my-5">About Me</h2>
             <p>
